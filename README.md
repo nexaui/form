@@ -84,15 +84,26 @@ Component menggunakan class styling default NexaUI:
 ## Event Handling
 
 ```jsx
-const handleSubmit = (e) => {
-  e.preventDefault()
-  const formData = new FormData(e.target)
-  // Proses form data
-}
-
-<form onSubmit={handleSubmit}>
-  // Form components
-</form>
+const nexaUi = new NexaUI();
+// Inisialisasi
+ nexaUi.ScriptKey("From.js").then((key) => {
+    nexaUi.createForm({
+    formid: "contactForm",
+    submitid: "contactForm-submit",
+    credensial: "BC948-67AB6-EA185-1001B",
+    argument:key.uid,
+    method: "formSend",
+    validasi: {
+        name: [3],
+    },
+  },
+  (result) => {
+    // Akan dipanggil setiap kali ada response baru
+    console.log(result.response);
+  }
+);
+   console.log(key.uid);
+});
 ```
 
 ## Dokumentasi
