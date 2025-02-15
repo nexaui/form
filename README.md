@@ -5,7 +5,7 @@ Form components library untuk NexaUI framework.
 ## Instalasi
 
 ```bash
-nexa i @nexaui/form
+ nexa i pckg@nexaui/form
 ```
 
 ## Components
