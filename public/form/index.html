@@ -1,0 +1,23 @@
+<form id="contactForm">
+
+<TextInput 
+  label="Input Normal"
+  type="text"
+  name="name"
+  placeholder="Input Normal"
+/>
+            
+<FileInput 
+    label="Drag & Drop Files"
+    dragDrop="true"
+    multiple="true"
+    preview="true"
+    name="attachment"
+    accept="image/*,application/pdf"
+/>
+<button title="Simpan" class="nx-btn-primary" id="contactForm-submit" />      
+</form>
+
+<div id="formResponse"></div>
+<NexaHas key="form/classForm"/>
+<script import="form/From.js" uid="oauth" key="optional"></script>
