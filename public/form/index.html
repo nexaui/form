@@ -1,0 +1,73 @@
+<a id="fromAdd" setfrom="#contactForm" submit="#contactForm-submit">Tambah Data</a>
+<hr>
+
+<form id="contactForm" class="hide">
+  <TextInput
+    label="Input Normal"
+    type="text"
+    name="nama"
+    placeholder="Input Normal"
+  />
+  <FileInput
+    label="Drag & Drop Files"
+    dragDrop="true"
+    multiple="true"
+    preview="true"
+    name="attachment"
+    accept="image/*,application/*"
+    type="file"
+    class="form-nexa"
+  />
+
+  <button
+    type="button"
+    title="Simpan"
+    class="nx-btn-primary hide"
+    id="contactForm-submit"
+  >
+    Submit
+  </button>
+
+  <button
+    type="button"
+    title="Simpan"
+    class="nx-btn-primary hide"
+    id="contactForm-update"
+  >
+    update
+  </button>
+</form>
+<hr>
+
+
+<input
+  type="search"
+  id="searchInput"
+  class="form-control"
+  placeholder="Search..."
+  value=""
+  required="required"
+  title=""
+/>
+<div id="pageInfo" class="page-info">
+  Showing page <span id="currentPage">0</span> of
+  <span id="totalPages">0</span> (<span id="totalItems">0</span> items)
+</div>
+<div id="item" extractor="set">
+  <h3>{set.id}</h3>
+  <h3>{set.nama}</h3>
+   <p>{set.images}</p>
+  <img class="w-100px" src="/img/{set.images}" alt="">
+  <a 
+   id="fromUpdate" 
+   key="{set.id}" 
+   submit="#contactForm-update"
+   setfrom="#contactForm">Update</a>
+  <a id="fromDelete" key="{set.id}">Delete</a>
+</div>
+<div id="pagination"></div>
+<hr />
+
+<NexaHas key="form/classForm" />
+<script import="form/From.js" uid="oauth" key="optional"></script>
+
